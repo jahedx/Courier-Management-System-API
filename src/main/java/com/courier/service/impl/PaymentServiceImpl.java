@@ -124,7 +124,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public List<Payment> getPendingPayments() {
-        String sql = "SELECT * FROM Payments WHERE PaymentStatus = 'در انتظار'";
+        String sql = "SELECT * FROM Payments WHERE PaymentStatus = 'pending'";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Payment.class));
     }
 } 
